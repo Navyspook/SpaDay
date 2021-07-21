@@ -10,17 +10,85 @@
 
 <h1>Fancy Spa</h1>
 <div id="clientProfile">
+    <h3>Client profile</h3>
+    <p>Name: @ViewBag.name</p>
 </div>
 <div id="servicesMenu">
 
     <h5>Facial Treatments</h5>
-    <p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p>
-    
+    <p>Your @ViewBag.skintype skin type is best suited to the following facial types:</p>
+
     <ul>
-        //TODO: iterate through appropriate facial treatments
+        @foreach (string treatment in ViewBag.appropriateFacials)
+        {
+            <li>@treatment</li>
+        }
     </ul>
 
     <h5>Nail Services</h5>
-    // TODO: display a description for the nail service selected
-    
+    @if (ViewBag.manipedi == "manicure")
+    {
+        <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+    }
+
+    else if (ViewBag.manipedi == "pedicure")
+    {
+        <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+    }
+
+    else
+    {
+        <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+        <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+    }
+
+</div>
+
+<label>Choose your nail color below:</label>
+@*<div style="height:0;width:10%;padding-bottom:10%;background-color:red">
+    <div>
+        RED
+    </div>
+</div>
+<div style="height:0;width:10%;padding-bottom:10%;background-color:pink">
+    <div>
+        PINK
+    </div>
+</div>
+<div style="height:0;width:10%;padding-bottom:10%;background-color:purple">
+    <div>
+        PURPLE
+    </div>
+</div>
+<div style="height:0;width:10%;padding-bottom:10%;background-color:deeppink">
+    <div>
+        DEEP PINK
+    </div>
+</div>
+<div style="height:0;width:10%;padding-bottom:10%;background-color:floralwhite">
+    <div>
+        FLORAL WHITE
+    </div>
+</div>*@
+
+<div class="square1">
+    <h3>RED</h3>
+</div>
+<div class="square2">
+    <h3>ORANGE</h3>
+</div>
+<div class="square3">
+    <h3>YELLOW</h3>
+</div>
+<div class="square4">
+    <h3>GREEN</h3>
+</div>
+<div class="square5">
+    <h3>BLUE</h3>
+</div>
+<div class="square6">
+    <h3>INDIGO</h3>
+</div>
+<div class="square7">
+    <h3>VIOLET</h3>
 </div>

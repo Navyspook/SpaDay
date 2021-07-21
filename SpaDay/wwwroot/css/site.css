@@ -69,3 +69,83 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.square1 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: red
+}
+.square1 h3 {
+    color: black;
+    font-size: smaller;
+}
+.square2 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: orange
+}
+.square2 h3 {
+    color: black;
+    font-size: smaller;
+}
+.square3 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: yellow
+}
+.square3 h3 {
+    color: black;
+    font-size: smaller;
+}
+.square4 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: green
+}
+.square4 h3 {
+    color: black;
+    font-size: smaller;
+}
+.square5 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: blue
+}
+.square5 h3 {
+    color: black;
+    font-size: smaller;
+}
+.square6 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: indigo
+}
+.square6 h3 {
+    color: black;
+    font-size: smaller;
+}
+.square7 {
+    background: #000;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+    background-color: violet
+}
+.square7 h3{
+    color: black;
+    font-size: smaller;
+}
+
+
