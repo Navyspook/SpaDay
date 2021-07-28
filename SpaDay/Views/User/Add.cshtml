@@ -1,31 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿@using SpaDay.ViewModels;
 
-    <input type="hidden" value="@ViewBag.eventToEdit.Id" name="eventId" />
-    method='post' action="/spa/user"
-*@
-@{
-}
+@model AddUserViewModel;
 
-<form method='post' action="/User/Add">
-    <div>
-        <h2>@ViewBag.error</h2><br>
+<h1>Add User</h1>
+
+<form method="post">
+
+
+    <div asp-controller="User" asp-action="Add" class="form-group">
+        <label asp-for="Email">Enter your email:</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span> <br>
     </div>
     <div class="form-group">
-        <label for="email">Enter your email:</label>
-        <input type="email" name="email" value="@ViewBag.email">
+        <label asp-for="Username">Username:</label><br>
+        <input asp-for="Username" /> <br>
+        <span asp-validation-for="Username"></span> <br>
     </div>
     <div class="form-group">
-        <label for="username">Username:</label><br>
-        <input type="text" name="username" value="@ViewBag.username"> <br>
+        <label asp-for="Password">Password:</label><br>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span> <br>
     </div>
     <div class="form-group">
-        <label for="pwd">Password:</label><br>
-        <input type="password" name="password">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Confirm Password:</label><br>
-        <input type="password" name="verify">
+        <label asp-for="VerifyPassword">Confirm Password:</label><br>
+        <input asp-for="VerifyPassword" type="password" />
+        <span asp-validation-for="VerifyPassword"></span> <br>
     </div>
     <input type="submit" value="Submit" />
 

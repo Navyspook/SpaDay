@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SpaDay.Models;
+using SpaDay.ViewModels;
 
 namespace SpaDay.Controllers
 {
@@ -15,30 +16,28 @@ namespace SpaDay.Controllers
         }
 
 
-        //[Route("/User/Add")]
         public IActionResult Add()
         {
-            return View();
+            AddUserViewModel addUserViewModel = new AddUserViewModel();
+
+            return View(addUserViewModel);
         }
 
-        [HttpPost("/User/Add")]
-        public IActionResult SubmitAddUserForm(User newUser, string verify)
+        [HttpPost]
+        public IActionResult Add(AddUserViewModel addUserViewModel)
         {
-            // add form submission handling code here
-            if (verify == newUser.Password)
+
+            if (ModelState.IsValid)
             {
-                ViewBag.username = newUser.Username;
-                ViewBag.email = newUser.Email;
-                //ViewBag.dt = newUser.DateTime;
-                return View("~/Views/User/Index.cshtml");
+                    User newUser = new User
+                    {
+                        Username = addUserViewModel.Username,
+                        Email = addUserViewModel.Email,
+                        Password = addUserViewModel.Password
+                    };
+                    return View("~/Views/User/Index.cshtml", newUser);                
             }
-            else
-            {
-                ViewBag.email = newUser.Email;
-                ViewBag.username = newUser.Username;
-                ViewBag.error = "Your passwords did not match. Please try again.";
-                return View("~/Views/User/Add.cshtml");
-            }
+            return View(addUserViewModel);
         }
     }
 }
