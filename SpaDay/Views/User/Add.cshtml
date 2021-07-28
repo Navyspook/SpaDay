@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+    <input type="hidden" value="@ViewBag.eventToEdit.Id" name="eventId" />
+    method='post' action="/spa/user"
+*@
+@{
+}
+
+<form method='post' action="/User/Add">
+    <div>
+        <h2>@ViewBag.error</h2><br>
+    </div>
+    <div class="form-group">
+        <label for="email">Enter your email:</label>
+        <input type="email" name="email" value="@ViewBag.email">
+    </div>
+    <div class="form-group">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" value="@ViewBag.username"> <br>
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label><br>
+        <input type="password" name="password">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Confirm Password:</label><br>
+        <input type="password" name="verify">
+    </div>
+    <input type="submit" value="Submit" />
+
+
+
+
+
+</form>
